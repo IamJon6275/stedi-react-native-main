@@ -16,11 +16,9 @@ const Tab = createMaterialBottomTabNavigator();
 
 export default function App() {
   const [userLoggedIn, setUserLoggedIn] = useState(false);
+  const [userEmail, setUserEmail] = useState('');
 
-  if(userLoggedIn){
-
-
-
+if(userLoggedIn){
   return (
     <NavigationContainer>
       <Tab.Navigator
@@ -32,6 +30,7 @@ export default function App() {
           name='Home'
           component={Home}
           options={{
+            userEmail: {userEmail},
             tabBarLabel: 'Home',
             tabBarIcon: ({ color }) => (
               <MaterialCommunityIcons name='home' color={color} size={26} />
@@ -65,7 +64,8 @@ export default function App() {
   } else {
     return (
       <View>
-        <Login/>
+        <Login setUserLoggedIn={setUserLoggedIn}
+        setUserEmail={setUserEmail}/>
       </View>
     )
   }
