@@ -28,9 +28,9 @@ if(userLoggedIn){
       >
         <Tab.Screen
           name='Home'
-          component={Home}
+          children={()=><Home userEmail = {userEmail}/>}
+          // component={Home}
           options={{
-            userEmail: {userEmail},
             tabBarLabel: 'Home',
             tabBarIcon: ({ color }) => (
               <MaterialCommunityIcons name='home' color={color} size={26} />

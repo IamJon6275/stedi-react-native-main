@@ -48,6 +48,7 @@ const Login = (props) => {
         value={phoneNumber}
         placeholder="801-555-1212"
         placeholderTextColor={'lightgray'}
+        keyboardType="numeric"
       />
       <TouchableOpacity
         style={styles.button}
